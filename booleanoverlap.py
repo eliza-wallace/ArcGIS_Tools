@@ -29,7 +29,7 @@ def AutoName(raster):
     
 # function that adds a short integer to a point feature class, then shows whether or not
     #it overlaps a polygon in another feature class.
-def booleanoverlay(points, polygons, newfield):
+def booleanoverlap(points, polygons, newfield):
     #copy polygons to new feature class
     #polycopy = "polygonscopy"
     polycopy = AutoName("polygonscopy")
@@ -46,7 +46,7 @@ def booleanoverlay(points, polygons, newfield):
     arcpy.Delete_management(joindata, polycopy)    
 
 try:
-    booleanoverlay(points, polygons, newfield)
+    booleanoverlap(points, polygons, newfield)
     
 except Exception:
     e = sys.exc_info()[1]
